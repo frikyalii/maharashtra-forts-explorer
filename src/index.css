@@ -2,39 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Maharashtra Forts Explorer - Material Design System 
+All colors MUST be HSL and inspired by fort architecture and landscapes.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base colors inspired by Maharashtra's landscape */
+    --background: 35 20% 98%;
+    --foreground: 25 30% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card colors with warm undertones */
+    --card: 35 25% 97%;
+    --card-foreground: 25 30% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 35 25% 97%;
+    --popover-foreground: 25 30% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Terracotta/Fort stone color */
+    --primary: 20 55% 45%;
+    --primary-foreground: 35 20% 98%;
+    --primary-glow: 20 65% 55%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Sandstone warm */
+    --secondary: 35 40% 88%;
+    --secondary-foreground: 25 30% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted - Soft earth tones */
+    --muted: 35 30% 92%;
+    --muted-foreground: 25 20% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Warm sunset orange */
+    --accent: 30 70% 60%;
+    --accent-foreground: 35 20% 98%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 35 20% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 35 25% 85%;
+    --input: 35 25% 92%;
+    --ring: 20 55% 45%;
+
+    /* Fort Explorer specific design tokens */
+    --fort-sunset: 25 85% 65%;
+    --fort-stone: 20 35% 75%;
+    --fort-shadow: 25 40% 30%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--fort-sunset)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--fort-stone)));
+    --gradient-accent: linear-gradient(90deg, hsl(var(--accent)), hsl(var(--primary-glow)));
+
+    /* Shadows with warm undertones */
+    --shadow-sm: 0 2px 4px hsl(var(--fort-shadow) / 0.1);
+    --shadow-md: 0 4px 12px hsl(var(--fort-shadow) / 0.15);
+    --shadow-lg: 0 8px 24px hsl(var(--fort-shadow) / 0.2);
+    --shadow-hero: 0 20px 40px hsl(var(--primary) / 0.3);
+
+    /* Material Design elevation */
+    --elevation-1: var(--shadow-sm);
+    --elevation-2: var(--shadow-md);
+    --elevation-3: var(--shadow-lg);
 
     --radius: 0.5rem;
 
