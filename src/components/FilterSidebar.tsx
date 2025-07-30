@@ -3,7 +3,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -17,21 +23,23 @@ const FilterSidebar = ({ isOpen, onClose }: FilterSidebarProps) => {
     <>
       {/* Mobile Overlay */}
       {isOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 z-40 md:hidden"
           onClick={onClose}
         />
       )}
 
       {/* Sidebar */}
-      <aside className={`
+      <aside
+        className={`
         fixed md:sticky top-0 left-0 z-50 md:z-auto
         w-80 h-screen md:h-auto
         bg-card border-r border-border
         transform transition-transform duration-300 ease-in-out
-        ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
+        ${isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
         overflow-y-auto shadow-elevation-2 md:shadow-none
-      `}>
+      `}
+      >
         <div className="p-4">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
@@ -58,7 +66,10 @@ const FilterSidebar = ({ isOpen, onClose }: FilterSidebarProps) => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <Input placeholder="Enter district or fort name..." className="mb-3" />
+              <Input
+                placeholder="Enter district or fort name..."
+                className="mb-3"
+              />
               <Select>
                 <SelectTrigger>
                   <SelectValue placeholder="Select District" />
@@ -70,6 +81,7 @@ const FilterSidebar = ({ isOpen, onClose }: FilterSidebarProps) => {
                   <SelectItem value="kolhapur">Kolhapur</SelectItem>
                   <SelectItem value="nashik">Nashik</SelectItem>
                   <SelectItem value="aurangabad">Aurangabad</SelectItem>
+                  <SelectItem value="aurangabad">Omerga</SelectItem>
                 </SelectContent>
               </Select>
             </CardContent>
@@ -106,14 +118,17 @@ const FilterSidebar = ({ isOpen, onClose }: FilterSidebarProps) => {
             <CardContent className="space-y-3">
               {[
                 "Maratha Empire",
-                "Mughal Period", 
+                "Mughal Period",
                 "British Colonial",
                 "Ancient/Medieval",
-                "Shivaji's Forts"
+                "Shivaji's Forts",
               ].map((era) => (
                 <div key={era} className="flex items-center space-x-2">
-                  <Checkbox id={era.toLowerCase().replace(/\s+/g, '-')} />
-                  <Label htmlFor={era.toLowerCase().replace(/\s+/g, '-')} className="text-sm">
+                  <Checkbox id={era.toLowerCase().replace(/\s+/g, "-")} />
+                  <Label
+                    htmlFor={era.toLowerCase().replace(/\s+/g, "-")}
+                    className="text-sm"
+                  >
                     {era}
                   </Label>
                 </div>
@@ -124,7 +139,9 @@ const FilterSidebar = ({ isOpen, onClose }: FilterSidebarProps) => {
           {/* Distance Range */}
           <Card className="mb-6">
             <CardHeader className="pb-3">
-              <CardTitle className="text-sm">Distance from Mumbai (km)</CardTitle>
+              <CardTitle className="text-sm">
+                Distance from Mumbai (km)
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <Slider
@@ -154,11 +171,14 @@ const FilterSidebar = ({ isOpen, onClose }: FilterSidebarProps) => {
                 "Guide Services",
                 "Food & Water",
                 "Accommodation",
-                "Photography Allowed"
+                "Photography Allowed",
               ].map((facility) => (
                 <div key={facility} className="flex items-center space-x-2">
-                  <Checkbox id={facility.toLowerCase().replace(/\s+/g, '-')} />
-                  <Label htmlFor={facility.toLowerCase().replace(/\s+/g, '-')} className="text-sm">
+                  <Checkbox id={facility.toLowerCase().replace(/\s+/g, "-")} />
+                  <Label
+                    htmlFor={facility.toLowerCase().replace(/\s+/g, "-")}
+                    className="text-sm"
+                  >
                     {facility}
                   </Label>
                 </div>
@@ -171,9 +191,7 @@ const FilterSidebar = ({ isOpen, onClose }: FilterSidebarProps) => {
             <Button variant="outline" className="w-full">
               Clear All Filters
             </Button>
-            <Button className="w-full bg-gradient-accent">
-              Apply Filters
-            </Button>
+            <Button className="w-full bg-gradient-accent">Apply Filters</Button>
           </div>
         </div>
       </aside>

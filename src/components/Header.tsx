@@ -41,7 +41,7 @@ const Header = ({ onMenuClick }: HeaderProps) => {
               History
             </a>
             <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-              Travel Tips
+              Travel dimpler
             </a>
           </nav>
 
